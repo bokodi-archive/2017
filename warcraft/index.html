@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Warcraft</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="hud" class="bordered">
+		<div id="hud-left">
+			<div id="map" class="bordered"></div>
+
+			<br>
+
+			<div id="selection" class="invisible">
+				<div id="selection-stats-wrapper" class="bordered">
+					<img src="" class="bordered" id="selection-icon">
+					<span id="selection-name"></span><br>
+					<div class="process-bar progress-bar-md">
+						<span id="process-progress" class="progress progress-grey"></span>
+					</div>
+					<div class="progress-bar progress-bar-md">
+						<span id="hp-progress" class="progress progress-green"></span>
+					</div>
+					<div class="progress-bar progress-bar-md">
+						<span id="mana-progress" class="progress progress-blue"></span>
+					</div>
+				</div>
+
+				<div>
+					<ul id="selection-abilities">
+						<li class="bordered"></li>
+						<li class="bordered"></li>
+						<li class="bordered"></li>
+						<li class="bordered"></li>
+						<li class="bordered"></li>
+						<li class="bordered"></li>
+					</ul>
+				</div>
+			</div>
+
+            <!--<br>-->
+
+			<!--<div>-->
+				<!--<button id="menu-button" class="bordered">MENU</button>-->
+			<!--</div>-->
+		</div>
+
+		<div id="hud-right">
+			<div id="stats" class="bordered">
+				<table>
+					<tbody>
+						<tr>
+							<td>LUMBER:</td>
+							<td>
+								<span id="stats-lumber"></span>
+								<img src="./resources/wood.png" height="16">
+							</td>
+							<td> </td>
+							<td>GOLD:</td>
+							<td>
+								<span id="stats-gold"></span>
+								<img src="./resources/gold.png" height="16">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<br>
+
+			<div id="main" class="bordered"></div>
+		</div>
+	</div>
+
+	<script src="src/index.js" type="module"></script>
+</body>
+</html>

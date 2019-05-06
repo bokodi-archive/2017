@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #D3D7BE;
+    user-select: none;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 23px;
+    background: #000 url('resources/title_screen.png') no-repeat top center;
+    background-size: cover;
+    font-family: verdana;
+}
+
+hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0 3px 0 #000;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+.bordered {
+    border: 2px solid #D3D7BE;
+}
+
+.progress-bar {
+    height: 19px;
+    margin-top: 3px;
+    position: relative;
+    background: #555;
+    border-radius: 1px;
+    padding: 2px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.progress-bar-sm {
+    height: 15px;
+}
+
+.progress-bar-md {
+    height: 19px;
+}
+
+.progress {
+    display: block;
+    height: 100%;
+    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-green {
+    background-color: rgb(43, 194, 83);
+}
+
+.progress-blue {
+    background-color: rgb(57, 94, 194);
+}
+
+.progress-grey {
+    background-color: rgb(126, 134, 109);
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#hud {
+    display: inline-block;
+    padding: 15px;
+    position: relative;
+    background-image: url("resources/hud-pattern-human.png");
+}
+
+#hud-left {
+    width: 210px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#hud-right {
+    display: inline-block;
+}
+
+#map {
+    width: 100%;
+    height: 210px;
+    background-color: black;
+}
+
+#selection {
+    height: 270px;
+}
+
+#selection-stats-wrapper {
+    padding: 3px;
+    background-color: #222325;
+}
+
+#selection-icon {
+    width: 54px;
+    height: 38px;
+}
+
+#selection-name {
+    font-size: 19px;
+}
+
+#selection-abilities li {
+    width: 46%;
+    height: 60px;
+    margin: 2%;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #000 no-repeat;
+}
+
+#selection-abilities li:hover {
+    border-color: #fff;
+}
+
+#menu-button {
+    width: 100%;
+    padding: 4px 0;
+    font-size: 18px;
+    letter-spacing: 3px;
+    background-color: #14304D;
+    outline: 0;
+    cursor: pointer;
+}
+
+#menu-button:hover {
+    background-color: #102740;
+}
+
+#stats {
+    padding: 5px;
+    background-color: #222325;
+}
+
+#stats table {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+#main {
+    overflow: hidden;
+    width: 736px;
+    height: 480px;
+    position: relative;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    cursor: url('resources/cursor.png') 0 0, auto;
+}
+
+#main canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
