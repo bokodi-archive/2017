@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form builder</title>
+    <link rel="stylesheet" href="FormBuilder.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style>body {margin: 8px;}</style>
+</head>
+<body>
+<div class="container">
+    <div class="h1">Form builder</div>
+
+    <div id="wrapper"></div>
+
+    <hr>
+
+    <div>
+        <button id="save" class="btn btn-primary" type="button">Save</button>
+        <button id="clear" class="btn btn-warning" type="button">Clear</button>
+        <button id="restore" class="btn btn-success" type="button">Restore</button>
+    </div>
+</div>
+
+<script src="EventTarget.js"></script>
+<script src="FormBuilder.js"></script>
+<script>
+    // create new field type:
+    var linkField = FormBuilder.createFieldType('Link', function(inputs) {
+        this.templateData = {
+            text: new inputs.text('Text', 'click here'),
+            href: new inputs.text('Link', 'http://www.google.com'),
+            target: new inputs.radio('Target', '_blank', [
+                { label: 'self', value: '_self' },
+                { label: 'blank', value: '_blank' },
+                { label: 'parent', value: '_parent' },
+                { label: 'top', value: '_top' }
+            ])
+        };
+
+        this.setTemplate('<a href="{{href}}" target="{{target}}" onclick="return false;">{{text}}</a>');
+    });
+
+    // optional
+    linkField.fieldGroup = 'Static';
+
+    var fb = new FormBuilder('#wrapper', {
+        removeFieldTypes: [FormBuilder.fieldTypes.HEADER]
+    });
+
+    // event listeners
+    fb.on(FormBuilder.EVENT_ADD_FIELD, function (e) {
+        console.log(e.target, 'field added');
+    });
+
+    fb.on(FormBuilder.EVENT_EDIT_FIELD, function (e) {
+        console.log(e.target, 'field saved');
+    });
+
+    fb.on(FormBuilder.EVENT_REMOVE_FIELD, function (e) {
+        console.log(e.target, 'field removed');
+    });
+
+    fb.on(FormBuilder.EVENT_MOVE_FIELD, function (e) {
+        console.log(e.target, 'field moved');
+    });
+
+    // store/restore data
+    document.getElementById('save').addEventListener('click', function() {
+        var data = fb.getJSONData();
+
+        window.localStorage.setItem('fb_data', data);
+    });
+
+    document.getElementById('clear').addEventListener('click', function() {
+        fb.clear();
+    });
+
+    document.getElementById('restore').addEventListener('click', function() {
+        var data = window.localStorage.getItem('fb_data');
+
+        fb.setJSONData(data);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+.form-builder-wrapper ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-builder-wrapper .form-control[disabled],
+.form-builder-wrapper input[type=checkbox][disabled] {
+    background-color: #ffffff;
+    cursor: auto;
+}
+
+div.fields-container, div.templates-container {
+    position: relative;
+}
+
+.form-builder-wrapper.read-only div.templates-container {
+    display: none;
+}
+
+ul.fields-list {
+    min-height: 230px;
+    padding-bottom: 30px;
+}
+
+ul.fields-list.empty {
+    border: 3px dashed #ccc;
+}
+
+ul.fields-list.empty:after {
+    content: attr(data-content);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -1em;
+    z-index: -1;
+}
+
+ul.fields-list > li {
+    position: relative;
+    padding: 6px;
+    margin-bottom: 3px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.form-builder-wrapper:not(.read-only) ul.fields-list > li:hover {
+    border: 1px solid cornflowerblue;
+    box-shadow: 0 0 8px cornflowerblue;
+}
+
+div.btn-group.action-buttons {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    display: none;
+}
+
+.form-builder-wrapper:not(.read-only) ul.fields-list li:hover .action-buttons {
+    display: block;
+}
+
+ul.fields-list li div.fields-list-item {
+    width: 100%;
+    display: inline-block;
+}
+
+ul.fields-list li div.fields-list-item .field-content input[type=checkbox],
+ul.fields-list li div.fields-list-item .field-content input[type=radio] {
+    margin: 0 5px 0 5px;
+    vertical-align: middle;
+}
+
+div.input-list-items {
+    margin-left: 15px;
+}
+
+div.input-list-items label {
+    font-weight: normal;
+}
+
+ul.templates-list li:hover {
+    background-color: rgba(180, 180, 180, 0.3);
+    cursor: pointer;
+}
+
+ul.inputs-list li.input-wrapper {
+    margin-bottom: 15px;
+}
+
+ul.inputs-list li.input-wrapper div.input-container input[type=checkbox].input-option-checkbox {
+    margin: 1px 10px 0 0;
+    vertical-align: text-top;
+}
+
+ul.inputs-list li.input-wrapper div.input-container ul li .row input[type=checkbox],
+ul.inputs-list li.input-wrapper div.input-container ul li .row input[type=radio] {
+    margin: 7px 0 0 7px;
+    vertical-align: text-top;
+}
+
+button.save-input {
+    margin-top: 10px;
+}
+
+.options-container {
+    margin: 10px 0 0 10px;
+}
+
+.options-container label {
+    font-weight: normal;;
+}
